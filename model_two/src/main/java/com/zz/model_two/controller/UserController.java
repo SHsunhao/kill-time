@@ -14,6 +14,6 @@ public class UserController {
 
     @RequestMapping("/hello")
     public String hello(){
-        return null;
+        return "index";
     }
 }
