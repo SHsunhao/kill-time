@@ -11,7 +11,9 @@ public interface TUserAuthorityMapper {
 
     int insertSelective(TUserAuthority record);
 
+
     TUserAuthority selectByPrimaryKey(Integer userAuthorityId);
+
 
     int updateByPrimaryKeySelective(TUserAuthority record);
 

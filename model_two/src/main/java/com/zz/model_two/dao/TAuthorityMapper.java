@@ -11,7 +11,9 @@ public interface TAuthorityMapper {
 
     int insertSelective(TAuthority record);
 
+
     TAuthority selectByPrimaryKey(Integer authorityId);
+
 
     int updateByPrimaryKeySelective(TAuthority record);
 

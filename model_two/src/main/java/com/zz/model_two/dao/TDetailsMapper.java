@@ -11,7 +11,9 @@ public interface TDetailsMapper {
 
     int insertSelective(TDetails record);
 
+
     TDetails selectByPrimaryKey(Long detailsId);
+
 
     int updateByPrimaryKeySelective(TDetails record);
 
