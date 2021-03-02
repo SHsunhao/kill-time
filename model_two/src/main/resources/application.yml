@@ -1,0 +1,30 @@
+spring:
+  datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+  driver-class-name: com.mysql.jdbc.Driver
+  filters: stat
+  maxActive: 20
+  initialSize: 1
+  maxWait: 60000
+  minIdle: 1
+  timeBetweenEvictionRunsMillis: 60000
+  minEvictableIdleTimeMillis: 300000
+  validationQuery: select 'x'
+  testWhileIdle: true
+  testOnBorrow: false
+  testOnReturn: false
+  poolPreparedStatements: true
+  maxOpenPreparedStatements: 20
+  connection-init-sqls: SET NAMES utf8mb4
+  username: root
+  data-password: 872230699_cat
+  url: jdbc:mysql://47.94.164.40:3306/kill_time?characterEncoding=utf-8&amp;allowMultiQueries=true&amp;zeroDateTimeBehavior=convertToNull
+
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+
+
+mybatis:
+  mapperLocations: classpath*:mysql/**/*.xml
