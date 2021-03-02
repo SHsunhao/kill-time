@@ -28,6 +28,3 @@ spring:
 
 mybatis:
   mapperLocations: classpath*:mysql/**/*.xml
-
-msg-config:
-  swagger-open: true
