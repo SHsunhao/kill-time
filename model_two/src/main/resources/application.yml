@@ -20,8 +20,11 @@ spring:
     maxOpenPreparedStatements: 20
     connection-init-sqls: SET NAMES utf8mb4
     username: root
-    data-password: 872230699_cat
-    url: jdbc:mysql://47.94.164.40:3306/kill_time?characterEncoding=utf-8&amp;allowMultiQueries=true&amp;zeroDateTimeBehavior=convertToNull
+    password: 872230699_cat
+    #mysql高级版本设置
+    url: jdbc:mysql://47.94.164.40:3306/kill_time?useSSL=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    #mysql低级版本设置
+    #url: jdbc:mysql://47.94.164.40:3306/kill_time?characterEncoding=utf-8&amp;allowMultiQueries=true&amp;zeroDateTimeBehavior=convertToNull
 
   redis:
     host: localhost
@@ -30,4 +33,8 @@ spring:
 
 
 mybatis:
-  mapperLocations: classpath*:mysql/**/*.xml
+  mapperLocations: classpath*:mysql/*.xml
+
+logging:
+  level:
+    com.zz.model_two.dao: debug
