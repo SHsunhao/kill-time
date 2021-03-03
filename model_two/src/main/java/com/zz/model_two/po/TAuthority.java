@@ -1,5 +1,15 @@
 package com.zz.model_two.po;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.Accessors;
+
+@Getter
+@Setter
+@ToString
+@Accessors
 public class TAuthority {
     private Integer authorityId;
 
