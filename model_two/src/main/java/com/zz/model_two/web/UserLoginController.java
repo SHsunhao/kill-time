@@ -6,17 +6,19 @@ import com.zz.model_two.service.UserLoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @author sunhao
  * @date 2021/3/2 19:35
  */
 
-@RestController
+@Controller
 @RequestMapping("/user")
 @Api(tags={"用户"})
 public class UserLoginController {
@@ -25,7 +27,7 @@ public class UserLoginController {
     private UserLoginService userLoginService;
 
     @ApiOperation(value = "登陆")
-    @RequestMapping(value = "/hello", method = RequestMethod.POST)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello(){
         return "hello";
     }
@@ -35,6 +37,14 @@ public class UserLoginController {
     public ApiResult addUser(@RequestBody TUser tUser){
         Integer integer = userLoginService.addUser(tUser);
         return ApiResult.ok(integer);
+    }
+
+    @RequestMapping(value = "/jsp", method = RequestMethod.GET)
+    public ModelAndView creat() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("message","Controller输出");
+        modelAndView.setViewName("hello");
+        return modelAndView;
     }
 
 }

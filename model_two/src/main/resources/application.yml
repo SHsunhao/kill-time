@@ -25,11 +25,14 @@ spring:
     url: jdbc:mysql://47.94.164.40:3306/kill_time?useSSL=true&useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     #mysql低级版本设置
     #url: jdbc:mysql://47.94.164.40:3306/kill_time?characterEncoding=utf-8&amp;allowMultiQueries=true&amp;zeroDateTimeBehavior=convertToNull
-
   redis:
     host: localhost
     port: 6379
     database: 0
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
 
 
 mybatis:
