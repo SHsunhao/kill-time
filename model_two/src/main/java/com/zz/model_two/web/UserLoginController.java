@@ -7,11 +7,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Map;
 
 /**
  * @author sunhao
@@ -45,6 +44,13 @@ public class UserLoginController {
         modelAndView.addObject("message","Controller输出");
         modelAndView.setViewName("hello");
         return modelAndView;
+    }
+
+    @ApiOperation("测试")
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(@RequestBody Map body) {
+        System.out.println(body);
+        return "cccc";
     }
 
 }
